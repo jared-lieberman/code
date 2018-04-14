@@ -15,4 +15,4 @@ Also in my Machine Learning course, I implemented the SVM, Random Forest, and Lo
 correctly classify data from two datasets. The first was hypothetical data about individuals on the Titantic
 and if they survived. There were a number of features and the subsequent label if they survived or not. The second
 dataset included hypothetical pixel data on a doctor's handwriting which then labeled the writing as either an eight
-or a nine. 
+or a nine. This project is in the files titanic.py and mnist.py.
