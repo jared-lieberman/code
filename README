@@ -1,0 +1,82 @@
+README
+
+• Identify you and your programming partner by name:
+
+Jared Lieberman (jliebe02) and Eric Magalhaes (emagal02)
+
+• Acknowledge help you may have received from or collaborative work you may 
+have undertaken with others:
+
+We have received a considerable amount of help from the TA's, 
+specifically the following: Graham, Rachel, Aditya, and Wesley.
+We also received collaborated with Jordan Stone and Hazen Breen.
+
+• Identify what has been correctly implemented and what has not:
+
+We did an excellent job implementing bitpack, which has been
+refined a number of times to remove any bugs.
+The conversions of unsigned, signed and float variables were
+difficult to implement, though it was done quite well as well.
+We have also modularized our program in a way that spreads 
+out our algorithms in an organized way.
+
+• Explain the architecture of your solution:
+
+The basic architecture of our program consists of the following:
+
+1) A module named image40.c which reads and processes the
+commandline, then calls on another module, compress40.c:
+  a) compress40.c differentiates between compression and
+  decompression given a char*, and performs the corresponding
+  operation on a given file in either decompress40 or compress40,
+  which direct the operation, which takes place within other
+  modules further into in our abstraction.
+
+  b) Compression and decompression both employ manual mapping 
+  through for loops in order to access sepcific pixels for 
+  certain conversions, then to access specific 2x2 blocks to 
+  perform packing operations. 
+
+     Operations on individual pixels:
+
+     i) RGB_float.c: Responsible for the conversion of unsigned
+Pnm_rgb values into float variables and vice versa.
+These values are stored in UArray_T's.
+     ii) Component_video.c: Responsible for the conversion of
+rgb float values into component video (y/pb/pr) values and vice versa. 
+These values are then stored in UArray_T's.
+
+     Operations on individual blocks:
+
+     iii) Component_data.c: Responsible for the manipulation 
+of component video data. This entails computing and 
+storing an average PB and PR (chroma) for a specific block, 
+then storing values of luma, Y1, Y2, Y3, and Y4, into
+a UArray_T. This accounts for the reverse operations as well.
+     iv) Bitpack_data.c: Receives values of PB, PR, and Y1-Y4,
+then converts these into formats suitable for bitpacking.
+This involves converting float values of PB, PR, and Y1-Y4
+into signed values of a, PB, and PR, and unsigned values
+b, c, and d. The reverse operation is also accounted
+for.
+     v) Pack.c: Obtains values of PB, PR, a, b, c, and d, and 
+employs functions implemented within bitpack.c that pack
+these values into a 32-bit word in the process of 
+compression, or extracts information from a 32-bit word
+in the process of decompression. 
+     vi) Bitpack.c: Contains functions that pack different 
+sized values into a 32-bit word, extract values from
+32-bit words, and check to see if different sized values 
+will fit into 32-bit words.
+
+Our program, for compression and decompression alike, calls on the
+same modules for specific functions as well as their inverses.
+
+• Say approximately how many hours you have spent analyzing the problems 
+posed in the assignment:
+        
+        We have spent 30 hours analyzing the problems.
+
+• Say approximately how many hours you have spent solving the problems after 
+your analysis:
+        We have spent 58 hours solving the problems after analysis.
