@@ -16,3 +16,6 @@ correctly classify data from two datasets. The first was hypothetical data about
 and if they survived. There were a number of features and the subsequent label if they survived or not. The second
 dataset included hypothetical pixel data on a doctor's handwriting which then labeled the writing as either an eight
 or a nine. This project is in the files titanic.py and mnist.py.
+
+In my Machine Structure and Assembly Language course, I implemented an image compressor and decompressor. It takes in
+PPM images and transforms the color space by packing and unpacking the binary data. This project is in the Arith branch.
