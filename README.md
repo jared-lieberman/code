@@ -17,5 +17,9 @@ and if they survived. There were a number of features and the subsequent label i
 dataset included hypothetical pixel data on a doctor's handwriting which then labeled the writing as either an eight
 or a nine. This project is in the files titanic.py and mnist.py.
 
-In my Machine Structure and Assembly Language course, I implemented an image compressor and decompressor. It takes in
+In my Machine Structure and Assembly Language course, I implemented an image compressor and decompressor in C. It takes in
 PPM images and transforms the color space by packing and unpacking the binary data. This project is in the Arith branch.
+
+In my Data Structure course, I implemented a program in C++ to connect students and TAs from different courses. It reads in data 
+about each person, and then retrieves information from that data. It can print the student names, the courses, the courses
+a certain person TAed, the roster of a certain class, all paths between two people, and the shortest path between two people. 
