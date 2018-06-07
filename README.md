@@ -1,7 +1,7 @@
 Jared R. Lieberman
 
 I am a recent graduate of Tufts University, where I studied Computer Science and Political Science. 
-I am seeking for opportunities to develop a mission-driven career in Data Science and Software Engineering.  
+I am seeking mission-driven opportunities to develop a career in Data Science and Software Engineering.  
 In particular, I am interested in applying quantitative methods and using data to better understand and solve 
 political, social, and public health issues.
 This repository includes files for a number of projects I have worked on over the past few years.
