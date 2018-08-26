@@ -1,65 +1,21 @@
-## ReadMe for COMP 15 HW6
-## 6-Degrees Final Assigment
+Jared R. Lieberman
 
-By: Jared R. Lieberman
-Date: 25 April 2016
+I am a senior at Tufts University studying Computer Science and Political Science, interested in applying quantitative
+methods and using data to better understand and solve political, social, and public health issues.
+This repository includes files for a number of projects I have worked on over the past few years.
 
-1.  The purpose of the program is to implement a way to connect students and
-    TAs from different courses. It is able to read in data about each person,
-    and then retrieve information from that data. It can print the student 
-    names, the courses, the courses a certain person TAed, the roster of a 
-    certain class, all paths between two people, and the shortest path between
-    two people. 
+At Beth Israel Deaconess Medical Center in Boston, MA I worked on a project to explore ways of making the emergency room 
+more efficient. I developed a simulation of the ER using Python's SimPy package that reproduced the process of a patient
+going through each step of the ER. The project is in the file ed_simulation_tkinter.py.
 
-2.  -main.cpp includes functions that hold numerous purposes. The functions 
-     read in the data, pass the data to other functions to execute their
-     respective functions, find all the paths between two people, find the
-     shortest path between two people, and print the paths
-    -ClassList.cpp includes functions that makeup the ClassList class. They
-     implement an array of courses that includes instances of the class ClassName.
-    -ClassList.h uncludes the function declarations for the ClassList class.
-    -ClassName.cpp includes functions that makeup the ClassName class. They
-     implement a vector of strings for the student names.
-    -MasterList.cpp includes functions that makeup the MasterList class. They
-     implement a hash table that includes instances of the class Person.
-    -MasterList.h includes the function declarations for the MasterList class.
-    -Person.cpp includes the functions that makeup the Person class. They 
-     implement an array of courses that a person TAed if they are a TA.
-    -Person.h includes the function declarations for the Person class
-    -hashfunc.cpp includes functions to assist in getting the index to place
-     an element in the hash table
-    -hashfunc.h includes the function delcarations for hashfunc.cpp
+In my Machine Learning course, I implemented a Naive Bayes classifier that classified Amazon, IMDB, and Yelp reviews. 
+The code includes plots for results. The project is in the file naive_bayes_project.py. 
 
-3.  The program should be compiled by using the included Makefile.
+Also in my Machine Learning course, I implemented the SVM, Random Forest, and Logistic Regression classifiers to
+correctly classify data from two datasets. The first was hypothetical data about individuals on the Titantic
+and if they survived. There were a number of features and the subsequent label if they survived or not. The second
+dataset included hypothetical pixel data on a doctor's handwriting which then labeled the writing as either an eight
+or a nine. This project is in the files titanic.py and mnist.py.
 
-4.  The data structures I use are three arrays and a hash table, which is
-    implemented as an array. There are four classes, each which contains
-    one of these arrays. The MasterList class includes the hash table, which
-    hold elements of type Person. The Person class includes an array of strings
-    for courses that a person TAed if they were a TA. The ClassList class holds
-    an array of strings that include elements of type ClassName. The ClassName
-    class holds an array of string for the roster of each class.
-
-5.  Algorithms:
-	Much of the algorithm used in implementing the hash table was to 
-	a correct index to place an element in the array. This was done
-	using linear probing to find an empty element. The expand function
-	for the hash table had nested loops that looped through the current
-	vector and placed the elements at a new index in the new array. The
-	algorithm for finding all paths and the shortest path was a Depth 
-	First Search. The function used a stack and recursion to find paths.
-	It look at all of the connected neighbors of a certain
-	TA and continued to recurse through the function if it continued to
-	find TAs. It then returned if a current person was not a TA or had 
-	already been passed in that path. The shortest path algorithm used
-	numerous helper functions to print prepare the path to be printed in
-	the correct order, and then be printed. An integer for the initial 
-	shortest path size and initial shortest path were initialized in order
-	to create have the variables to be compared to. The shortest path size
-	is initialized at 100000000 because there will not be a path that long.
-
-6.  I collaborated with and received assistance with conceptualizing the 
-    program from Jordan Stone and Hazen Breen. 
-
-
-
+In my Machine Structure and Assembly Language course, I implemented an image compressor and decompressor. It takes in
+PPM images and transforms the color space by packing and unpacking the binary data. This project is in the Arith branch.
