@@ -29,4 +29,4 @@ PPM images and transforms the color space by packing and unpacking the binary da
 In my Data Structure course, I implemented a program in C++ to connect students and TAs from different courses. It reads in data 
 about each person, and then retrieves information from that data. It can print the student names, the courses, the courses
 a certain person TAed, the roster of a certain class, all paths between two people, and the shortest path between two people. 
-This project is in the data_structure_final folder.
+This project is in the data_structures_final folder.
