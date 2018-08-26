@@ -1,0 +1,339 @@
+This is submission 2.
+Your maximum number of submissions for hw6 is 10.
+
+
+Your work is 2 day(s) late.
+You previously submitted today.
+Additional tokens do not need to be used.
+
+  8: Checking required files
+     OK        ReadMe.md
+     OK        Makefile
+
+  9: Checking if files are correct type
+     OK        ClassList.cpp
+     OK        ClassName.cpp
+     OK        MasterList.cpp
+     OK        Person.cpp
+     OK        hashfunc.cpp
+     OK        main.cpp
+
+
+Checking Files...
+Making program via Makefile
+No errors!
+
+-----------Your program produced compiler warnings.----------
+
+make[1]: Entering directory `/comp/15/grading/hw6/jliebe02.2'
+clang++ -g -Wall -Wextra -o hw6degrees main.cpp hashfunc.cpp ClassList.cpp\
+ ClassName.cpp MasterList.cpp Person.cpp
+main.cpp:35:14: warning: unused parameter 'argc' [-Wunused-parameter]
+int main(int argc, char *argv[]) {
+             ^
+1 warning generated.
+ClassList.cpp:47:40: warning: unused parameter 'name' [-Wunused-parameter]
+void ClassList::add_ta_to_class(string name, string course_name) {
+                                       ^
+1 warning generated.
+make[1]: Leaving directory `/comp/15/grading/hw6/jliebe02.2'
+
+This submission will count, but you may lose points because of
+the warnings. Your program should compile with no warnings.
+-------------------------------------------------------------
+
+"Running tests. This might take a while. Please be patient..."
+
+********** Testing ./hw6degrees with empty_ls_test **********
+# "ls" on empty files
+empty_ls_test Passed!
+********** Done Testing ./hw6degrees with empty_ls_test **********
+
+
+********** Testing ./hw6degrees with empty_paths_test **********
+# "paths abc123 def456" on empty files
+empty_paths_test Passed!
+********** Done Testing ./hw6degrees with empty_paths_test **********
+
+
+********** Testing ./hw6degrees with empty_short_test **********
+# "shortestpath abc123 def456" on empty files
+Test of empty_short_test Failed!
+//---------- Expected output for empty_short_test (first 8000 characters): 
+Student not found
+//---------- End of expected output for empty_short_test.
+
+//---------- Your output for empty_short_test (first 8000 characters): 
+//---------- End of your output for empty_short_test.
+
+//---------- diff for empty_short_test (first 8000 characters): 
+1d0
+< Student not found
+//---------- End of diff for empty_short_test.
+********** Done Testing ./hw6degrees with empty_short_test **********
+
+
+********** Testing ./hw6degrees with small_lc_test **********
+# "lc" on small files
+small_lc_test Passed!
+********** Done Testing ./hw6degrees with small_lc_test **********
+
+
+********** Valgrind test of hw6degrees-with-small_lc_test **********
+Running valgrind to check for memory leaks.
+No memory leaks!
+********** Done Valgrind test of hw6degrees-with-small_lc_test **********
+
+
+********** Testing ./hw6degrees with small_ls_test **********
+# "ls" on small files
+small_ls_test Passed!
+********** Done Testing ./hw6degrees with small_ls_test **********
+
+
+********** Valgrind test of hw6degrees-with-small_ls_test **********
+Running valgrind to check for memory leaks.
+No memory leaks!
+********** Done Valgrind test of hw6degrees-with-small_ls_test **********
+
+
+********** Testing ./hw6degrees with small_paths_test **********
+# "paths Brad.Pitt Tom.Cruise" on small files (output is sorted)
+Test of small_paths_test Failed!
+//---------- Expected output for small_paths_test (first 8000 characters): 
+Brad.Pitt +- 15S13 -> George.Clooney +- 11F14 -> Tom.Cruise
+Brad.Pitt +- 15S13 -> George.Clooney +- 40S14 -> Meryl.Streep +- 15F15 -> Jennifer.Lawrence +- 160S16 -> Tom.Cruise
+Brad.Pitt +- 15S13 -> George.Clooney +- 40S14 -> Meryl.Streep +- 15F15 -> Kevin.Bacon +- 105S16 -> Tom.Cruise
+//---------- End of expected output for small_paths_test.
+
+//---------- Your output for small_paths_test (first 8000 characters): 
+Brad.Pitt +- 15S13 -> George.Clooney +- 11F14 -> Tom.CruiseBrad.Pitt +- 15S13 -> George.Clooney +- 40S14 -> Meryl.Streep +- 15F15 -> Jennifer.Lawrence +- 160S16 -> Tom.CruiseBrad.Pitt +- 15S13 -> George.Clooney +- 40S14 -> Meryl.Streep +- 15F15 -> Kevin.Bacon +- 105S16 -> Tom.Cruise
+//---------- End of your output for small_paths_test.
+
+//---------- diff for small_paths_test (first 8000 characters): 
+1,3c1
+< Brad.Pitt +- 15S13 -> George.Clooney +- 11F14 -> Tom.Cruise
+< Brad.Pitt +- 15S13 -> George.Clooney +- 40S14 -> Meryl.Streep +- 15F15 -> Jennifer.Lawrence +- 160S16 -> Tom.Cruise
+< Brad.Pitt +- 15S13 -> George.Clooney +- 40S14 -> Meryl.Streep +- 15F15 -> Kevin.Bacon +- 105S16 -> Tom.Cruise
+---
+> Brad.Pitt +- 15S13 -> George.Clooney +- 11F14 -> Tom.CruiseBrad.Pitt +- 15S13 -> George.Clooney +- 40S14 -> Meryl.Streep +- 15F15 -> Jennifer.Lawrence +- 160S16 -> Tom.CruiseBrad.Pitt +- 15S13 -> George.Clooney +- 40S14 -> Meryl.Streep +- 15F15 -> Kevin.Bacon +- 105S16 -> Tom.Cruise
+//---------- End of diff for small_paths_test.
+********** Done Testing ./hw6degrees with small_paths_test **********
+
+
+********** Valgrind test of hw6degrees-with-small_paths_test **********
+Running valgrind to check for memory leaks.
+No memory leaks!
+********** Done Valgrind test of hw6degrees-with-small_paths_test **********
+
+
+********** Testing ./hw6degrees with small_short_test **********
+# "shortestpath Brad.Pitt Tom.Cruise" on small files
+small_short_test Passed!
+********** Done Testing ./hw6degrees with small_short_test **********
+
+
+********** Valgrind test of hw6degrees-with-small_short_test **********
+Running valgrind to check for memory leaks.
+No memory leaks!
+********** Done Valgrind test of hw6degrees-with-small_short_test **********
+
+
+********** Testing ./hw6degrees with small_short_test2 **********
+# "shortestpath Meryl.Streep Brad.Pitt" on small files
+small_short_test2 Passed!
+********** Done Testing ./hw6degrees with small_short_test2 **********
+
+
+********** Valgrind test of hw6degrees-with-small_short_test2 **********
+Running valgrind to check for memory leaks.
+No memory leaks!
+********** Done Valgrind test of hw6degrees-with-small_short_test2 **********
+
+
+********** Testing ./hw6degrees with large_lc_test **********
+# "lc" on WHOTOOKWHAT-ANONYMIZED, TAS-ANONYMIZED (output is sorted)
+large_lc_test Passed!
+********** Done Testing ./hw6degrees with large_lc_test **********
+
+
+********** Testing ./hw6degrees with large_ls_test **********
+# "ls" on WHOTOOKWHAT-ANONYMIZED, TAS-ANONYMIZED (output is sorted)
+large_ls_test Passed!
+********** Done Testing ./hw6degrees with large_ls_test **********
+
+
+********** Testing ./hw6degrees with large_roster_test **********
+# "roster 170S16" on WHOTOOKWHAT-ANONYMIZED, TAS-ANONYMIZED (output is sorted)
+large_roster_test Passed!
+********** Done Testing ./hw6degrees with large_roster_test **********
+
+
+********** Testing ./hw6degrees with large_taed_test **********
+# "taed Lindsey.Davis" on WHOTOOKWHAT-ANONYMIZED, TAS-ANONYMIZED (output is sorted)
+large_taed_test Passed!
+********** Done Testing ./hw6degrees with large_taed_test **********
+
+
+********** Testing ./hw6degrees with large_paths_test2 **********
+# "paths Aisha.Tyler Demi.Moore" on WHOTOOKWHAT-ANONYMIZED, TAS-ANONYMIZED
+large_paths_test2 Passed!
+********** Done Testing ./hw6degrees with large_paths_test2 **********
+
+
+********** Testing ./hw6degrees shortestpath cmd on large-students.text, large-tas.text **********
+shortestpath Anne.Lamott David.Spade
+Test of shortestpath Failed!
+//---------- One possible output for shortestpath(Anne.Lamott,David.Spade)
+Anne.Lamott +- 40F13 -> Rohinton.Mistry +- 160F14 -> Cornelia.Funke +- 40S13 -> Chazz.Palminteri +- 160S14 -> David.Spade
+//---------- End of one possible output for shortestpath(Anne.Lamott,David.Spade)
+
+//---------- Your output for shortestpath(Anne.Lamott,David.Spade) (first 8000 characters): 
+TIMEOUT 240 on ./hw6degrees
+//---------- End of your output for shortestpath(Anne.Lamott,David.Spade)
+
+********** Done Testing ./hw6degrees shortestpath cmd on large-students.text, large-tas.text **********
+
+
+********** Testing ./hw6degrees with med_lc_test **********
+# "lc" on sub-sampled large datasets (output is sorted)
+med_lc_test Passed!
+********** Done Testing ./hw6degrees with med_lc_test **********
+
+
+********** Valgrind test of hw6degrees-with-med_lc_test **********
+Running valgrind to check for memory leaks.
+No memory leaks!
+********** Done Valgrind test of hw6degrees-with-med_lc_test **********
+
+
+********** Testing ./hw6degrees with med_ls_test **********
+# "ls" on sub-sampled large datasets (output is sorted)
+med_ls_test Passed!
+********** Done Testing ./hw6degrees with med_ls_test **********
+
+
+********** Valgrind test of hw6degrees-with-med_ls_test **********
+Running valgrind to check for memory leaks.
+No memory leaks!
+********** Done Valgrind test of hw6degrees-with-med_ls_test **********
+
+
+********** Testing ./hw6degrees with med_taed_test **********
+# "taed Hedy.Lamarr" on sub-sampled large datasets (output is sorted)
+med_taed_test Passed!
+********** Done Testing ./hw6degrees with med_taed_test **********
+
+
+********** Valgrind test of hw6degrees-with-med_taed_test **********
+Running valgrind to check for memory leaks.
+No memory leaks!
+********** Done Valgrind test of hw6degrees-with-med_taed_test **********
+
+
+********** Testing ./hw6degrees with med_roster_test **********
+# "roster 15F13" on sub-sampled large datasets (output is sorted)
+med_roster_test Passed!
+********** Done Testing ./hw6degrees with med_roster_test **********
+
+
+********** Valgrind test of hw6degrees-with-med_roster_test **********
+Running valgrind to check for memory leaks.
+No memory leaks!
+********** Done Valgrind test of hw6degrees-with-med_roster_test **********
+
+
+********** Testing ./hw6degrees with med_paths_test **********
+# "paths Naomie.Harris Robert.Redford" on sub-sampled large datasets (output is sorted)
+med_paths_test Passed!
+********** Done Testing ./hw6degrees with med_paths_test **********
+
+
+********** Valgrind test of hw6degrees-with-med_paths_test **********
+Running valgrind to check for memory leaks.
+No memory leaks!
+********** Done Valgrind test of hw6degrees-with-med_paths_test **********
+
+
+********** Testing ./hw6degrees with med_paths_test2 **********
+# "paths E.M.Forster Brad.Dexter" on sub-sampled large datasets (output is sorted)
+Test of med_paths_test2 Failed!
+//---------- Expected output for med_paths_test2 (first 8000 characters): 
+E.M.Forster +- 15S13 -> Charles.S.Dutton +- 11F13 -> Bruce.Sterling +- 11S14 -> Ruby.Keeler +- 11F14 -> Brad.Dexter
+E.M.Forster +- 15S13 -> Charles.S.Dutton +- 11F13 -> Maureen.O'Sullivan +- 11S14 -> Ruby.Keeler +- 11F14 -> Brad.Dexter
+E.M.Forster +- 15S13 -> Dr.Trae.Oberbrunner.MD +- 11F13 -> Bruce.Sterling +- 11S14 -> Ruby.Keeler +- 11F14 -> Brad.Dexter
+E.M.Forster +- 15S13 -> Dr.Trae.Oberbrunner.MD +- 11F13 -> Maureen.O'Sullivan +- 11S14 -> Ruby.Keeler +- 11F14 -> Brad.Dexter
+E.M.Forster +- 15S13 -> Dr.Trae.Oberbrunner.MD +- 11S14 -> Ruby.Keeler +- 11F14 -> Brad.Dexter
+E.M.Forster +- 15S13 -> Geraldine.Brooks +- 11F14 -> Brad.Dexter
+E.M.Forster +- 15S13 -> Mrs.Lisbeth.Stehr.PhD +- 170S16 -> Dan.Cragg +- 40S15 -> Louis.Sachar +- 40S16 -> Alexandra.Ripley +- 11S14 -> Ruby.Keeler +- 11F14 -> Brad.Dexter
+E.M.Forster +- 15S13 -> Rudyard.Kipling +- 11F14 -> Brad.Dexter
+E.M.Forster +- 15S13 -> Sarah.Waters +- 15F13 -> Craig.T.Nelson +- 11S14 -> Ruby.Keeler +- 11F14 -> Brad.Dexter
+E.M.Forster +- 15S13 -> Sarah.Waters +- 160F14 -> Christopher.Cazenove +- 11F14 -> Brad.Dexter
+E.M.Forster +- 15S13 -> Sarah.Waters +- 160F14 -> Craig.T.Nelson +- 11S14 -> Ruby.Keeler +- 11F14 -> Brad.Dexter
+//---------- End of expected output for med_paths_test2.
+
+//---------- Your output for med_paths_test2 (first 8000 characters): 
+E.M.Forster +- 15S13 -> Dr.Trae.Oberbrunner.MD +- 11S14 -> Ruby.Keeler +- 11F14 -> Brad.DexterE.M.Forster +- 15S13 -> Dr.Trae.Oberbrunner.MD +- 11F13 -> Bruce.Sterling +- 11S14 -> Ruby.Keeler +- 11F14 -> Brad.DexterE.M.Forster +- 15S13 -> Dr.Trae.Oberbrunner.MD +- 11F13 -> Maureen.O'Sullivan +- 11S14 -> Ruby.Keeler +- 11F14 -> Brad.DexterE.M.Forster +- 15S13 -> Charles.S.Dutton +- 11F13 -> Bruce.Sterling +- 11S14 -> Ruby.Keeler +- 11F14 -> Brad.DexterE.M.Forster +- 15S13 -> Charles.S.Dutton +- 11F13 -> Maureen.O'Sullivan +- 11S14 -> Ruby.Keeler +- 11F14 -> Brad.DexterE.M.Forster +- 15S13 -> Rudyard.Kipling +- 11F14 -> Brad.DexterE.M.Forster +- 15S13 -> Sarah.Waters +- 15F13 -> Craig.T.Nelson +- 11S14 -> Ruby.Keeler +- 11F14 -> Brad.DexterE.M.Forster +- 15S13 -> Sarah.Waters +- 160F14 -> Craig.T.Nelson +- 11S14 -> Ruby.Keeler +- 11F14 -> Brad.DexterE.M.Forster +- 15S13 -> Sarah.Waters +- 160F14 -> Christopher.Cazenove +- 11F14 -> Brad.DexterE.M.Forster +- 15S13 -> Mrs.Lisbeth.Stehr.PhD +- 170S16 -> Dan.Cragg +- 40S15 -> Louis.Sachar +- 40S16 -> Alexandra.Ripley +- 11S14 -> Ruby.Keeler +- 11F14 -> Brad.DexterE.M.Forster +- 15S13 -> Geraldine.Brooks +- 11F14 -> Brad.Dexter
+//---------- End of your output for med_paths_test2.
+
+//---------- diff for med_paths_test2 (first 8000 characters): 
+1,11c1
+< E.M.Forster +- 15S13 -> Charles.S.Dutton +- 11F13 -> Bruce.Sterling +- 11S14 -> Ruby.Keeler +- 11F14 -> Brad.Dexter
+< E.M.Forster +- 15S13 -> Charles.S.Dutton +- 11F13 -> Maureen.O'Sullivan +- 11S14 -> Ruby.Keeler +- 11F14 -> Brad.Dexter
+< E.M.Forster +- 15S13 -> Dr.Trae.Oberbrunner.MD +- 11F13 -> Bruce.Sterling +- 11S14 -> Ruby.Keeler +- 11F14 -> Brad.Dexter
+< E.M.Forster +- 15S13 -> Dr.Trae.Oberbrunner.MD +- 11F13 -> Maureen.O'Sullivan +- 11S14 -> Ruby.Keeler +- 11F14 -> Brad.Dexter
+< E.M.Forster +- 15S13 -> Dr.Trae.Oberbrunner.MD +- 11S14 -> Ruby.Keeler +- 11F14 -> Brad.Dexter
+< E.M.Forster +- 15S13 -> Geraldine.Brooks +- 11F14 -> Brad.Dexter
+< E.M.Forster +- 15S13 -> Mrs.Lisbeth.Stehr.PhD +- 170S16 -> Dan.Cragg +- 40S15 -> Louis.Sachar +- 40S16 -> Alexandra.Ripley +- 11S14 -> Ruby.Keeler +- 11F14 -> Brad.Dexter
+< E.M.Forster +- 15S13 -> Rudyard.Kipling +- 11F14 -> Brad.Dexter
+< E.M.Forster +- 15S13 -> Sarah.Waters +- 15F13 -> Craig.T.Nelson +- 11S14 -> Ruby.Keeler +- 11F14 -> Brad.Dexter
+< E.M.Forster +- 15S13 -> Sarah.Waters +- 160F14 -> Christopher.Cazenove +- 11F14 -> Brad.Dexter
+< E.M.Forster +- 15S13 -> Sarah.Waters +- 160F14 -> Craig.T.Nelson +- 11S14 -> Ruby.Keeler +- 11F14 -> Brad.Dexter
+---
+> E.M.Forster +- 15S13 -> Dr.Trae.Oberbrunner.MD +- 11S14 -> Ruby.Keeler +- 11F14 -> Brad.DexterE.M.Forster +- 15S13 -> Dr.Trae.Oberbrunner.MD +- 11F13 -> Bruce.Sterling +- 11S14 -> Ruby.Keeler +- 11F14 -> Brad.DexterE.M.Forster +- 15S13 -> Dr.Trae.Oberbrunner.MD +- 11F13 -> Maureen.O'Sullivan +- 11S14 -> Ruby.Keeler +- 11F14 -> Brad.DexterE.M.Forster +- 15S13 -> Charles.S.Dutton +- 11F13 -> Bruce.Sterling +- 11S14 -> Ruby.Keeler +- 11F14 -> Brad.DexterE.M.Forster +- 15S13 -> Charles.S.Dutton +- 11F13 -> Maureen.O'Sullivan +- 11S14 -> Ruby.Keeler +- 11F14 -> Brad.DexterE.M.Forster +- 15S13 -> Rudyard.Kipling +- 11F14 -> Brad.DexterE.M.Forster +- 15S13 -> Sarah.Waters +- 15F13 -> Craig.T.Nelson +- 11S14 -> Ruby.Keeler +- 11F14 -> Brad.DexterE.M.Forster +- 15S13 -> Sarah.Waters +- 160F14 -> Craig.T.Nelson +- 11S14 -> Ruby.Keeler +- 11F14 -> Brad.DexterE.M.Forster +- 15S13 -> Sarah.Waters +- 160F14 -> Christopher.Cazenove +- 11F14 -> Brad.DexterE.M.Forster +- 15S13 -> Mrs.Lisbeth.Stehr.PhD +- 170S16 -> Dan.Cragg +- 40S15 -> Louis.Sachar +- 40S16 -> Alexandra.Ripley +- 11S14 -> Ruby.Keeler +- 11F14 -> Brad.DexterE.M.Forster +- 15S13 -> Geraldine.Brooks +- 11F14 -> Brad.Dexter
+//---------- End of diff for med_paths_test2.
+********** Done Testing ./hw6degrees with med_paths_test2 **********
+
+
+********** Valgrind test of hw6degrees-with-med_paths_test2 **********
+Running valgrind to check for memory leaks.
+No memory leaks!
+********** Done Valgrind test of hw6degrees-with-med_paths_test2 **********
+
+
+********** Testing ./hw6degrees shortestpath cmd on med-students.text, med-tas.text **********
+shortestpath E.M.Forster Brad.Dexter
+
+All paths are valid
+
+shortestpath test Passed!
+********** Done Testing ./hw6degrees shortestpath cmd on med-students.text, med-tas.text **********
+
+
+********** Testing ./hw6degrees with corners_paths_test **********
+# "paths Bob.Smith Bob.Smith" (corner case to test against infinite loop)
+corners_paths_test Passed!
+********** Done Testing ./hw6degrees with corners_paths_test **********
+
+
+********** Testing ./hw6degrees with corners_paths_test2 **********
+# "paths Emily.Smith Dan.Smith" (corner case for testing for a path between disconnected vertices)
+corners_paths_test2 Passed!
+********** Done Testing ./hw6degrees with corners_paths_test2 **********
+
+
+********** Testing ./hw6degrees with corners_paths_test3 **********
+# "paths Frank.Smith Frank.Smith" (corner case to test when a ta taed him/herself)
+corners_paths_test3 Passed!
+********** Done Testing ./hw6degrees with corners_paths_test3 **********
+
+
+********** Testing ./hw6degrees with corners_paths_test4 **********
+# "paths Alice.Smith Alice.Smith" (corner case to test against trivial path)
+corners_paths_test4 Passed!
+********** Done Testing ./hw6degrees with corners_paths_test4 **********
+
+
+*/*/*/*/*/ Some of the tests failed! /*/*/*/*/*
+Tests that failed: 
+empty_short_test, small_paths_test, shortestpath(Anne.Lamott,David.Spade), med_paths_test2, 
