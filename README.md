@@ -1,16 +1,14 @@
 Jared R. Lieberman
 
 I am a recent graduate of Tufts University, where I studied Computer Science and Political Science. 
-I am seeking mission-driven opportunities to develop a career focusing on Data Science, Statistics, and Software Engineering.  
-
-In particular, I am interested in applying quantitative methods and using data to better understand and solve 
+I am seeking mission-driven opportunities to develop a career focusing on Data Science, Statistics, and Software Engineering.  In particular, I am interested in applying quantitative methods and using data to better understand and solve 
 political, social, and public health issues. 
 
-I am currently working as a Software Developer for a Political Science professor at MIT.
+I am currently working as a Software Developer for Professor In Song Kim at MIT's Department of Political Science.
 
 This repository includes files for a number of projects I have worked on over the past few years.
 
-At Beth Israel Deaconess Medical Center in Boston, MA I worked on a project to explore ways of making the emergency room 
+At Beth Israel Deaconess Medical Center in Boston, MA I worked on a project exploring ways of making the emergency room 
 more efficient. I developed a simulation of the ER using Python's SimPy package that reproduced the process of a patient
 going through each step of the ER. The project is in the file ed_simulation_tkinter.py.
 
