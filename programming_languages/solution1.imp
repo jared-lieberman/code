@@ -1,0 +1,309 @@
+;; Name: Jared R. Lieberman
+;; Date due: 13 September 2017
+;; Comp105 Assignment 1: Impcore
+;; File: solution.imp
+;; Purpose: Contains Impcore code solutions 
+
+
+
+;;============================================================
+;;
+;; Problem 4
+;;
+;;============================================================
+;; (sigma m n) is given two integers, m and n, and returns 
+;; the sum of all the integers between them, including both
+;; m and n. It assumes m < n.
+
+;; Examples and tests:
+(check-expect (sigma 5 5) 5)    ;; base case n = m
+(check-expect (sigma 0 1) 1)    ;; inductive case n = 1
+(check-expect (sigma -1 3) 5)   ;; negative inductive case
+
+;; Function Definition:
+(define sigma (m n)
+    (if (= m n)
+        n
+        (+ m (sigma (+ m 1) n))))
+
+;; Analysis of the induction:
+;; The induction treats both m and n as integers, thus they can be 
+;; negative, and assumes m < n. The base case is when m = n and there
+;; is no addition needed. The inductive steps increment m and sum each
+;; value until n is reached, and thus when m = n.
+
+
+;;============================================================
+;;
+;; Problem 5
+;;
+;;============================================================
+;; (exp b n) is given two natural numbers and computes the 
+;; value of base b with the exponent n.
+
+;; Examples and tests:
+(check-expect (exp 2 0) 1) ;; base case n = 0
+(check-expect (exp 2 1) 2) ;; inductive case b = 2, n = 1
+(check-expect (exp 0 2) 0) ;; inductive case b = 0
+
+;; Function Definition:
+(define exp (b n)
+    (if (= n 0)
+        1
+        (* b (exp b (- n 1)))))
+
+;; Analysis of the induction:
+;; The induction is on n, a natural number with the base case
+;; n = 0. The inductive step assumes n has a natural number
+;; one less than it. Additionally, b can be any natural number.
+
+;;============================================================
+;; (log b n) is given two natural numbers and returns the largest
+;; exponent that b can have without exceeding n. It is assumed
+;; that b > 1 and n > 0.
+
+;; Examples and tests:      
+(check-expect (log 5 5) 1)  ;; base case b = n
+(check-expect (log 25 5) 0) ;; base case n < b
+(check-expect (log 5 25) 2) ;; inductive case b = 5, n = 25
+(check-expect (log 5 26) 2) ;; inductive case b = 5, n = 26
+
+;; Definition:
+(define log (b n)
+    (if (<= n b)
+        (= n b)
+        (+ 1 (log b (/ n b)))))
+
+;; Analysis of the induction:
+;; The induction is on n and treats it as a natural number. 
+;; The two base cases are when b = n, which will return 1, 
+;; and when n < b, which will return 0. The inductive cases
+;; are when n > b and thus n can be divided by b.
+
+
+;;============================================================
+;;
+;; Problem 7
+;;
+;;============================================================
+;; (fib n) is given a natural number n and returns the nth 
+;; Fibonacci number.
+
+;; Examples and tests:
+(check-expect (fib 0) 0)    ;; base case n = 0
+(check-expect (fib 1) 1)    ;; base case n = 1
+(check-expect (fib 2) 1)    ;; inductive case n = 2
+(check-expect (fib 15) 610) ;; large inductive case n = 15
+
+;; Function Definition
+(define fib(n)
+    (if (< n 2)
+        n
+        (+ (fib (- n 1)) (fib (- n 2)))))
+
+;; Analysis of the induction:
+;; The induction breaks down the natural numbers into two cases, either
+;; less 2 or greater than or equal to 2. There are two base cases,
+;; when n = 0 and when n = 1 because in both cases n = the nth 
+;; Fibonacci number. In the inductive step, the nth Fibonacci number
+;; can be found by summing the two previous Fibonacci numbers.
+
+
+;;============================================================
+;;
+;; Problem 8
+;;
+;;============================================================
+;; (prime? n) is given a natural number n and returns a nonzero
+;; value if n is prime and zero otherwise
+;; (prime_finder? n m) is given the initial value of n and 'n - 1'.
+;; The function returns, back to prime? 1 if n is prime and zero 
+;; otherwise. 
+
+;; Examples and tests:
+(check-expect (prime? 0) 0)  ;; base case n = 0
+(check-expect (prime? 1) 0)  ;; base case n = 1
+(check-expect (prime? 5) 1)  ;; inductive case n = 5
+(check-expect (prime_finder? 5 4) 1) ;; inductive case n = 5, m = 4
+
+;; Function Definition
+(define prime_finder? (n m)
+    (if (= m 1)
+        1
+        (if (= (mod n m) 0)
+            0
+            (prime_finder? n (- m 1)))))
+
+(define prime? (n)
+    (if (< n 2)
+        0
+        (prime_finder? n (- n 1))))
+
+
+;; Analysis of the induction:
+;; The induction, occurring in the function prime_finder?, treats
+;; m as a natural number and assumes it has a natural number 
+;; one less than itself. I provided three base cases, when 
+;; n = 0 and 1 to show that the smalles prime number is 2.
+;; In the inductive step, the check for primality
+;; occurs by finding possible remainders between n and the current 
+;; value of m.
+
+
+;;============================================================
+;; (nthprime n) is given a natural number n that represents the 
+;; index of a prime number. It is assumed that n > 0. The function
+;; then passes n and 2 to nthprime_helper
+;; (nthprime_finder n m) is given an integer n, where n > 0, and
+;; m, which is passed in as the value 2. It returns the value of
+;; the nth prime number.
+
+;; Examples and tests:
+(check-expect (nthprime 1) 2)    ;; first inductive case n = 1
+(check-expect (nthprime 40) 173) ;; large inductive case n = 40
+(check-expect (nthprime_finder 1 2) 2) ;; first inductive case n = 1, m = 2
+
+;; Function Definition
+(define nthprime_finder (n m)
+    (if (= n 0)
+        (- m 1)
+        (if (prime? m)
+            (nthprime_finder (- n 1) (+ m 1))
+            (nthprime_finder n (+ m 1)))))
+
+;; what to do with n = 0
+(define nthprime (n)
+    (nthprime_finder n 2))
+
+
+;; Analysis of the induction:
+;; The indunction, which occurs in nthprime_helper, treats 
+;; n as a natural number with numbers less than it and
+;; m as a natural number with the form m + 1. The base case
+;; is when n <= 0 because the index of prime numbers are
+;; natural numbers greater than 0. In the inductive steps,
+;; when the current m value is prime n gets subtracted by one
+;; and m gets added by one. When the current m value is not prime 
+;; just m gets added by one.
+
+
+;;============================================================
+;; (sumprimes n) is given a natural number n and returns the sum 
+;; of the first n prime numbers. If n = 0, the function returns 0.
+
+;; Examples and tests:
+(check-expect (sumprimes 0) 0)    ;; base case n = 0 
+(check-expect (sumprimes 1) 2)    ;; first inductive case n = 1
+(check-expect (sumprimes 12) 197) ;; larger inductive case n = 12
+
+;; Function Definition
+(define sumprimes (n)
+    (if (= n 0)
+        0
+        (+ (nthprime n) (sumprimes (- n 1)))))
+
+;; Analysis of the induction:
+;; The induction occurs on the natural number n when n > 0. 
+;; The base case, when n = 0, returns 0. The inductive step
+;; occurs when n > 0 and assumes that there is a natural number
+;; less than n.  
+
+;;============================================================
+;; (relprime? m n) is given two natural numbers m and n, where 
+;; it is assumed that both m and n are both greater than 1. The 
+;; function passes m, n, and 1 to relprime_helper?
+;; (relprime_finder? a b p) is given three values, a and b, both
+;; natural numbers, and p, which is initially 1. The function returns 
+;; 1 if m and n are relatively prime and 0 if not.
+
+
+;; Examples and tests:
+(check-expect (relprime? 2 2) 1)  ;; base case m = n, true
+(check-expect (relprime? 5 10) 0) ;; inductive case, m is factor of n, false
+(check-expect (relprime? 5 6) 1)  ;; inductive case, true
+(check-expect (relprime_finder? 2 2 1) 1) ;; base case
+
+;; Function Definition
+(define relprime_finder? (a b p)
+    (if (and (>= (nthprime p) a) (>= (nthprime p) b))
+        1
+        (if (and (= (mod a (nthprime p)) 0) (= (mod b (nthprime p)) 0))
+            0
+            (relprime_finder? a b (nthprime (+ p 1))))))
+
+(define relprime? (m n)
+    (relprime_finder? m n 1))
+
+;; Analysis of the induction:
+;; The induction occurs in relprime_helper? with p, the index counter
+;; for the nthprime. The base case occurs when the nthprime
+;; number is greater than or equal to the larger of a and b. The inductive
+;; step occurs when both a and b are not divisible by the current
+;; prime number. The nthprime value, p, increments by one at each
+;; inductive step.
+
+
+;;============================================================
+;;
+;; Problem 10
+;;
+;;============================================================
+;; (binary m) is given an integer, m, in decimal representation. Thus,
+;; m can be negative and zero, in addition to positive. The function
+;; returns the value of m in binary representation.
+
+;; Examples and tests:
+(check-expect (binary 0) 0)       ;; base case m = 0
+(check-expect (binary -1) -1)     ;; inductive case, m = -1
+(check-expect (binary 1) 1)       ;; inductive case, m = 1
+(check-expect (binary 12) 1100)   ;; inductive case, m = 12
+(check-expect (binary -12) -1100) ;; inductive case, m = -12
+
+
+;; Definition:
+(define binary (m)
+    (if (= m 0)
+        0
+        (+ (mod m 2) (* 10 (binary (/ m 2))))))
+
+;; Analysis of the induction:
+;;   - Description of one or more base cases
+;;   - Description of one or more inductive steps
+;; The induction occurs when m does not equal zero. The base case,
+;; when m = 0, return 0. Otherwise, the inductive step sums 
+;; m mod 2 to represent the current value in binary. It sums that 
+;; with the value of the next digit by dividing.
+
+;;============================================================
+;;
+;; Problem DD
+;;
+;;============================================================
+;; (double-digit n) is given a positive integer less than 20,000
+;; and returns a positive integer whose decimal representation is
+;; the same as the decimal representation of the input, except each
+;; digit appears twice. 
+
+;; Examples and tests:
+(check-expect (double-digit 1) 11)             ;; base case n = 1
+(check-expect (double-digit 12) 1122)          ;; inductive case n = 12
+(check-expect (double-digit 19999) 1199999999) ;; inductive case n = 19999
+
+;; Definition:
+(define double-digit (n)
+    (if (= n 0)
+        0
+        (+ (+ (* 10 (mod n 10)) (mod n 10)) (* 100 (double-digit(/ n 10))))))
+
+;; Analysis of the induction:
+;;   - Description of one or more base cases
+;;   - Description of one or more inductive steps
+;; The induction occurs when n does not equal zero. The base case, when n = 1,
+;; returns 11. The inductive step mods the current digit by 10, then 
+;; multiplies it by 10 and adds that the value of itself mod 10 to make two
+;; copies in the correct positions. It then recurses and shifts over the
+;; values by multiplying by 100.
+
+
+
+
