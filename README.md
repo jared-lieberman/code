@@ -29,7 +29,10 @@ about each person, and then retrieves information from that data. It can print t
 a certain person TAed, the roster of a certain class, all paths between two people, and the shortest path between two people. 
 This project is in the data_structures_final folder.
 
-In my Programming Languages course, I completed a number of assignments that demonstrate competence with induction, recursion,
-functional programming, first-class functions, higher-order functions, and continuations. The provided assignments are written
-in Imperative Core, Scheme, and ML. Code from some of these assignments, which was a subset of the required work, is included
-in the programming_languages folder.
+From my Programming Languages course, I have provided work from a number of assignments that demonstrate competence with 
+induction, recursion, functional programming, first-class functions, higher-order functions, and continuations. The provided
+assignments are written in Imperative Core, Scheme, and ML. Code from some of these assignments, which was a subset of the
+required work, is included in the programming_languages folder.
+
+Thanks!
+
