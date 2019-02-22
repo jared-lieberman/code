@@ -1,0 +1,16 @@
+Jared R. Lieberman
+MA Department of Revenue
+Data Scientist Coding Challenge
+6 January 2018
+
+This repository contains code that implements the random forest classifier
+for New York City taxi data. It uses csv files from the Taxi & Limousine
+Commission website to read in rides from January 2018. Using this data, it
+predicts which borough a ride will finish in.
+
+The millions of rides are initially processed in read_in_data.py.
+
+The exploratory data analysis is performed in exploratory_analysis.py, which
+creates a table with matplotlib.
+
+The actual models are created in random_forest_classifier.py.
