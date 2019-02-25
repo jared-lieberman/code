@@ -1,9 +1,6 @@
 """ 
 File Name: exploratory_analysis.py
 Jared R. Lieberman
-MA Department of Revenue
-Data Scientist Coding Challenge
-6 January 2018
 """
 
 import pandas as pd
