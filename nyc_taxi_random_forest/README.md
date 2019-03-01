@@ -38,7 +38,7 @@ Further steps to take in the exploratory analysis could be looking at how long e
 takes depending on where it started and where it ended. For example, trips to 
 EWR (Newark Airport) probably have a longer duration.
 
-[[code/nyc_taxi_random_forest/Pick-Up_and_Drop-Off_Data_for_each_NYC_Borough.png|Pick Up Drop off file]]
+[[Pick-Up_and_Drop-Off_Data_for_each_NYC_Borough.png|Pick Up Drop off file]]
 
 ## Summary of Findings
 
