@@ -26,8 +26,7 @@ the original data.
 
 I began by analyzing how many trips start and end in each borough. I matched each pick-up
 and drop-off location ID to the borough zoning data also provided on the website. Thus, I
-had which boroughs each ride began and finished in. The results are shown in the table below,
-which was created in exploratory_analysis.py. For yellow taxis, the greatest number of rides
+had which boroughs each ride began and finished in. For yellow taxis, the greatest number of rides
 start and end in Manhattan. For green taxis, the greatest number of rides start in Brooklyn
 and end in Manhattan. For FHV’s, the greatest number of rides start and end in Manhattan.
 Besides New Airport, the least number of rides for each type of vehicle start and end in
@@ -38,10 +37,6 @@ ride types.
 Further steps to take in the exploratory analysis could be looking at how long each ride 
 takes depending on where it started and where it ended. For example, trips to 
 EWR (Newark Airport) probably have a longer duration.
- 
-[[/nyc_taci_random_forest/Pick-Up_and_Drop-Off_Data_for_each_NYC_Borough.png
-      |Pick-Up Drop-Off Data]] 
-
 
 # Summary of Findings
 
