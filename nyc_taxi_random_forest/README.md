@@ -1,6 +1,6 @@
-Jared R. Lieberman
+# Jared R. Lieberman
 
-Data Science side project
+## Data Science side project
 
 This repository contains code that implements the random forest classifier
 for New York City taxi data. It uses csv files from the Taxi & Limousine
@@ -22,7 +22,7 @@ Thus, the data alone provide an insight into an independent analysis of each, ra
 than a comparison between the three ride types. However, the models effectively represent
 the original data.
 
-# Exploratory Analysis
+## Exploratory Analysis
 
 I began by analyzing how many trips start and end in each borough. I matched each pick-up
 and drop-off location ID to the borough zoning data also provided on the website. Thus, I
@@ -38,7 +38,9 @@ Further steps to take in the exploratory analysis could be looking at how long e
 takes depending on where it started and where it ended. For example, trips to 
 EWR (Newark Airport) probably have a longer duration.
 
-# Summary of Findings
+[[code/nyc_taxi_random_forest/Pick-Up_and_Drop-Off_Data_for_each_NYC_Borough.png|Pick Up Drop off file]]
+
+## Summary of Findings
 
 I chose to describe the patterns of each of the three ride types.
 Thus, I although the task asked for one model, I created three total for each ride type.
