@@ -8,6 +8,9 @@ I am currently working as a Software Developer for Professor In Song Kim at MIT'
 
 This repository includes files for a number of projects I have worked on over the past few years.
 
+I did a side project that applies the random forest classifier to NYC taxi data in order to predict which borough taxis end up
+in. The work and a more detailed description can be found in the nyc_taxi_random_forest folder.
+
 At Beth Israel Deaconess Medical Center in Boston, MA I worked on a project exploring ways of making the emergency room 
 more efficient. I developed a simulation of the ER using Python's SimPy package that reproduced the process of a patient
 going through each step of the ER. The project is in the file ed_simulation_tkinter.py.
