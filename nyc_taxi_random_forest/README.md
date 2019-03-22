@@ -41,7 +41,7 @@ EWR (Newark Airport) probably have a longer duration.
 ## Summary of Findings
 
 I chose to describe the patterns of each of the three ride types.
-Thus, I although the task asked for one model, I created three total for each ride type.
+Thus, I created three total for each ride type.
 I believe this is the best way of achieving the goal of creating policy-relevant predictions
 on where NYC taxis and for-hire rides end. I chose to use Random Forest algorithm for the 
 data because I wanted a supervised approach to the classification problem. The entirety of 
@@ -63,7 +63,7 @@ features to consider when splitting a node.
 
 A classifier is then created and fitted to the training data. Next, the accuracy is taken
 on the testing data. Each model performs extremely well on the training data 
-(between 96% and 99% accuracy). The is more discrepancy on the testing data. The yellow
+(between 96% and 99% accuracy). There is more discrepancy on the testing data. The yellow
 taxi model performs at about 85% accuracy, the green taxi model performs at about 80% accuracy,
 and the for-hire rides perform at about 65-70% accuracy. I believe the accuracies would
 increase using the entirety of the data, rather than a subset of 20,000 of each dataset.
