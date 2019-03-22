@@ -29,7 +29,7 @@ and drop-off location ID to the borough zoning data also provided on the website
 had which boroughs each ride began and finished in. For yellow taxis, the greatest number of rides
 start and end in Manhattan. For green taxis, the greatest number of rides start in Brooklyn
 and end in Manhattan. For FHV’s, the greatest number of rides start and end in Manhattan.
-Besides New Airport, the least number of rides for each type of vehicle start and end in
+Besides Newark Airport, the least number of rides for each type of vehicle start and end in
 Staten Island. As noted, because I am using a constant, rather than proportional, subset
 of the data, the ride type counts can only be compared to itself, rather than to other
 ride types.
